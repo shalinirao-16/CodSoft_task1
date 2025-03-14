@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shalini's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0d7a9, #95f1a4);
+            color: #1a0101;
+            padding: 20px;
+            line-height: 1.8;
+            overflow-x: hidden;
+            animation: gradientShift 10s infinite alternate;
+        }
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #802959;
+            animation: bounceIn 1.5s ease-out;
+        }
+        section {
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            margin-bottom: 50px;
+            animation: slideIn 1s ease-out;
+            transition: transform 0.5s;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        a {
+            text-decoration: none;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #802959;
+            cursor: pointer;
+            animation: logoPop 2s ease-in-out infinite;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            color: #802959;
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            animation: fadeIn 2s ease-in;
+        }
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #802959, #ff5733);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: textGlow 2s infinite alternate;
+        }
+        .hero span {
+            color: #802959;
+        }
+        .hero p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        #about img {
+            max-width: 200px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px;
+            border: 3px solid #8b057a;
+            transition: transform 0.4s ease;
+        }
+        #about img:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+        #about p {
+            text-align: center;
+            font-size: 1.2em;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        /* Skills */
+        .skills h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #802959;
+        }
+        .skills ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .skills li {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .skills li:hover {
+            transform: scale(1.2);
+            background: #802959;
+            color: #000;
+            box-shadow: 0 0 20px #802959;
+        }
+
+        /* Projects */
+        .project {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            transition: transform 0.4s ease-in-out, background 0.3s;
+        }
+        .project h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .project p {
+            font-size: 1.1em;
+        }
+        .project:hover {
+            transform: translateY(-15px);
+            background: #802959;
+            color: #000;
+        }
+
+        /* Resume */
+        .resume a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #802959;
+            color: #000;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .resume a:hover {
+            background: #802959;
+            transform: scale(1.1);
+        }
+
+        /* Contact */
+        .contact p {
+            font-size: 1.2em;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes logoPop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 20px #802959; }
+            to { text-shadow: 0 0 30px #ff5733; }
+        }
+
+        @keyframes gradientShift {
+            from { background: linear-gradient(135deg, #f0d7a9, #95f1a4); }
+            to { background: linear-gradient(135deg, #95f1a4, #f0d7a9); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">&lt; SHALINI B S &gt;</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Hi all, I'm <span>SHALINI B S</span> 👋</h1>
+        <p>I'm a Computer Science Engineering student with a knack for Full Stack Development 🚀. I enjoy crafting interactive web experiences and mobile applications. Constantly curious and driven to learn, I strive to turn ideas into innovative solutions!</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="my_image.jpg" alt="Your Image">
+        <p>I'm a Computer Science Engineering student with a passion for Full Stack Development. Skilled in building web and mobile applications using modern technologies, I love exploring new technologies and enhancing my coding skills. Beyond academics, I actively engage in open-source projects and stay curious about the ever-evolving tech world. I constantly challenge myself by taking on complex coding problems, participating in hackathons, and collaborating with like-minded developers. For me, every line of code is an opportunity to create something impactful, and I'm driven by the thrill of turning ideas into reality.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <h3>Programming Languages</h3>
+        <ul>
+            <li>C</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>SQL</li>
+        </ul>
+        <h3>Web Technologies</h3>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Signature Validation System</h3>
+            <p>A machine learning project that uses Convolutional Neural Networks (CNN) and image processing techniques to verify handwritten signatures. This system detects and authenticates signatures with high accuracy, providing robust protection against forgery.</p>
+            <p><strong>Technologies used:</strong> Python, CNN Algorithm</p>
+        </div>
+    </section>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <a href="shalini_resume.pdf" download>Download My Resume</a>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: shalinirao696@gmail.com</p>
+        <p>Phone: +91 9845881349</p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Shalini. All rights reserved.</p>
+    </footer>
+</body>
+</html>
